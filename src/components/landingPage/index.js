@@ -1,6 +1,6 @@
 import React from "react";
 import { MenuItem, InputLabel, FormControl } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+
 // import SearchIcon from '@mui/icons-material/Search';
 import {
   HeadingGrid,
@@ -8,16 +8,18 @@ import {
   Heading,
   SubHeading,
   SearchMain,
-  SearchIconWrapper,
-  Search,
+  CustomSearchIcon,
   StyledInputBase,
   SubSearch,
   OutLineSymbol,
   SelectGrid,
   CustomSelect,
+  CustomImage,
 } from "../Styled-component/Styled";
-import SliderContent from "../slider/slidebar";
+import SliderContent from "../slider/slider";
 import Header from "../Header/header";
+import ring from "../../assets/ring.png";
+
 const Home = () => {
   return (
     <React.Fragment>
@@ -25,6 +27,7 @@ const Home = () => {
       <MainHeadingGrid>
         <HeadingGrid>
           <Heading variant="h1">
+            <CustomImage src={ring} />
             Meet your <OutLineSymbol variant="span">Icon</OutLineSymbol>
           </Heading>
           <SubHeading variant="h2">
@@ -47,7 +50,6 @@ const Home = () => {
                   Speciality
                 </InputLabel>
                 <CustomSelect
-                  sx={{ width: "192px" }}
                   label="Speciality"
                   // color="red"
                 >
@@ -63,23 +65,13 @@ const Home = () => {
                 >
                   Topic
                 </InputLabel>
-                <CustomSelect sx={{ width: "192px" }} label="Topic">
+                <CustomSelect label="Topic">
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
                 </CustomSelect>
               </FormControl>
-              <SearchIcon
-                sx={{
-                  width: "50px",
-                  height: "40px",
-                  backgroundColor: "#E32320",
-                  color: "white",
-                  marginLeft: "16px",
-                  borderRadius: "6px",
-                  padding: "10px",
-                }}
-              ></SearchIcon>
+              <CustomSearchIcon />
             </SelectGrid>
           </SubSearch>
         </SearchMain>
